@@ -17,7 +17,7 @@ export interface Icon<T> extends Bulma.Size, Bulma.Alignment,
 
 const isAlignOption = isOption(isLeft, isRight);
 
-export function Icon({children, ...props }: Icon<HTMLElement>) {
+export function Icon({ children, ...props }: Icon<HTMLElement>) {
     const className = classNames(
         'icon',
         {
@@ -30,7 +30,7 @@ export function Icon({children, ...props }: Icon<HTMLElement>) {
 
     const icon = (
         <span {...HTMLProps} className={className}>
-            <i className={`${props.className}`} aria-hidden="true"></i>
+            {children ? children : (<i className={`${props.className}`} aria-hidden="true"></i>)}
         </span>
     );
 

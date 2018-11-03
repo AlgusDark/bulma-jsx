@@ -44,4 +44,13 @@ describe('Icon', () => {
             </span>
         )).toBe(true);
     });
+
+    it('should render children instead of icon', () => {
+        const component = shallow(<Icon><span>child</span></Icon>)
+        expect(component.contains(
+            <span className='icon'>
+               <span>child</span>
+            </span>
+        )).toBe(true);
+    })
 });
